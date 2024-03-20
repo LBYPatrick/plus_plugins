@@ -214,7 +214,7 @@ class MethodChannelShare extends SharePlatform {
       final path = "$tempSubfolderPath/$filename";
 
       //Write the file to FS
-      await File(path).writeAsBytes(await file.readAsBytes());
+      await File(path).writeAsBytes(await file.readAsBytes(), flush: true);
 
       return XFile(path);
     }
